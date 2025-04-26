@@ -1,0 +1,8 @@
+services:
+  control-node:
+    build:
+      context: control-node
+
+  managed-node:
+    build:
+      context: managed-node
