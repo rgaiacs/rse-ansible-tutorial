@@ -21,6 +21,45 @@ where:
 - ``hosts`` is a reserved workd.
 - ``one.managed_node.com`` and ``two.managed_node.com`` are the name of the servers.
 
+Variables
+^^^^^^^^^
+
+The `inventory`_ can contain variables and some variables are used to controls how Ansible interacts with the managed node.
+For example,
+
+- ``ansible_host`` configures the IP used when connecting to the managed node.
+- ``ansible_user`` configures the user name used when connecting to the managed node.
+- ``ansible_password`` configures the password used when connecting to the managed node.
+
+The `inventory`_ would be
+
+..  code:: yaml
+
+    managed_node.com:
+      hosts:
+        one.managed_node.com:
+          ansible_user: alice
+          ansible_password: 123alice456
+        two.managed_node.com:
+          ansible_user: bob
+          ansible_password: 123bob456
+
+..  tip::
+
+    Variables can also be defined for the group.
+
+    ..  code:: yaml
+
+        managed_node.com:
+          hosts:
+            one.managed_node.com:
+            two.managed_node.com:
+          vars:
+            ansible_user: alice
+            ansible_password: 123alice456
+
+The full list of this variables is in `Connecting to hosts: behavioral inventory parameters <https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters>`_.
+
 Playbook
 --------
 
@@ -47,4 +86,6 @@ To run a `playbook`, use
 
 ..  code:: bash
 
-    ansible-playbook playbook.yml
+    ansible-playbook \
+    --inventory path/to/production.yml \
+    playbook.yml
