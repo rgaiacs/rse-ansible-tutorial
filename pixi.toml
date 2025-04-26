@@ -1,0 +1,10 @@
+[workspace]
+authors = ["Raniere Silva <raniere@rgaiacs.com>"]
+channels = ["conda-forge"]
+name = "rse-ansible-tutorial"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
