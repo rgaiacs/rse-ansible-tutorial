@@ -13,7 +13,11 @@ RUN adduser ansible -D
 
 USER ansible
 
-RUN mkdir /home/ansible/tutorial
+RUN mkdir /home/ansible/.ssh && \
+    echo 'Host *' >> /home/ansible/.ssh/config && \
+    echo '    StrictHostKeyChecking no' >> /home/ansible/.ssh/config && \
+    chmod 400 /home/ansible/.ssh/config && \
+    mkdir /home/ansible/tutorial
 
 WORKDIR /home/ansible/tutorial
 
