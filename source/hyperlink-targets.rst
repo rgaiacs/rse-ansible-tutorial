@@ -5,3 +5,5 @@
 .. _Python: https://www.python.org/
 .. _SSH server: https://en.wikipedia.org/wiki/Comparison_of_SSH_servers
 .. _SSH client: https://en.wikipedia.org/wiki/Comparison_of_SSH_clients
+.. _virtual machine: https://en.wikipedia.org/wiki/Virtual_machine
+.. _container: https://en.wikipedia.org/wiki/Containerization_(computing)

@@ -14,3 +14,4 @@ It includes features for software provisioning, configuration management, and ap
    :caption: Contents:
 
    architecture
+   sandbox
