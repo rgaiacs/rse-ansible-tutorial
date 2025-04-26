@@ -2,7 +2,20 @@ services:
   control-node:
     build:
       context: control-node
+    networks:
+      ansible:
+        aliases:
+          - control_node
 
   managed-node:
     build:
       context: managed-node
+    ports:
+      - 22
+    networks:
+      ansible:
+        aliases:
+          - managed_node
+
+networks:
+  ansible:
