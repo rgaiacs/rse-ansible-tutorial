@@ -1,9 +1,16 @@
-.. _Ansible: https://docs.ansible.com/
-.. _infrastructure as code: https://en.wikipedia.org/wiki/Infrastructure_as_code
 .. _agentless: https://en.wikipedia.org/wiki/Agentless_data_collection
+.. _Ansible: https://docs.ansible.com/
+.. _block: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#block
+.. _container: https://en.wikipedia.org/wiki/Containerization_(computing)
+.. _infrastructure as code: https://en.wikipedia.org/wiki/Infrastructure_as_code
+.. _inventory: https://docs.ansible.com/ansible/latest/inventory_guide/index.html
+.. _play: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#play
+.. _playbook: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
 .. _push model: https://en.wikipedia.org/wiki/Push_technology
 .. _Python: https://www.python.org/
-.. _SSH server: https://en.wikipedia.org/wiki/Comparison_of_SSH_servers
+.. _role: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#role
 .. _SSH client: https://en.wikipedia.org/wiki/Comparison_of_SSH_clients
+.. _SSH server: https://en.wikipedia.org/wiki/Comparison_of_SSH_servers
+.. _task: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#task
 .. _virtual machine: https://en.wikipedia.org/wiki/Virtual_machine
-.. _container: https://en.wikipedia.org/wiki/Containerization_(computing)
+.. _YAML: https://yaml.org/spec/1.2.2/

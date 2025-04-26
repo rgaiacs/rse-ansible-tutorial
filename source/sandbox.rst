@@ -32,6 +32,6 @@ Podman
 Docker
 ^^^^^^
 
-..  code::bash
+..  code:: bash
 
     docker compose up -d
