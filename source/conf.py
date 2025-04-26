@@ -28,6 +28,8 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 
+with open("hyperlink-targets.rst", encoding="utf-8") as _hyperlink_targets:
+    rst_epilog = _hyperlink_targets.read()
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
