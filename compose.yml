@@ -6,6 +6,10 @@ services:
       ansible:
         aliases:
           - control_node
+    volumes:
+      - type: bind
+        source: ./source/examples
+        target: /home/ansible/tutorial
 
   managed-node:
     build:
