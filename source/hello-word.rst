@@ -1,21 +1,29 @@
 Hello World
 ===========
 
-Users must provide two files to `Ansible`_: a `inventory`_ listing the managed nodes and a `playbook`_ listing the operations to be performed on the managed nodes.
+..  important::
+
+    This uses the :doc:`sandbox`.
+
+This small example illustrates the concepts from :doc:`introduction`. 
 
 Inventory
 ---------
 
 ..  literalinclude:: examples/hello-world/inventories/production.yml
-    :name: inventories/production.yml
+    :caption: inventories/production.yml
     :language: yaml
+
+The above `inventory`_ has a single group called ``web`` that has a single managed node called ``managed_node`` and the connection details. 
 
 Playbook
 --------
 
 ..  literalinclude:: examples/hello-world/playbook.yaml
-    :name: playbook.yml
+    :caption: playbook.yml
     :language: yaml
+
+The above `playbook`_ has a single `play`_ that runs a single `task`_ on the managed nodes from group ``web``. 
 
 Running
 -------
