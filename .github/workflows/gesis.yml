@@ -1,0 +1,27 @@
+name: Sync with GESIS GitLab
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Explore-GitHub-Actions:
+    if: github.repository == 'rgaiacs/rse-ansible-tutorial'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create remote
+        run: |
+          if [ -z "$(git remote | grep gesis)" ]
+          then
+          git remote add gesis https://git.gesis.org/rse/ansible/learn/tutorial.git
+          fi
+      - name: Update remote
+        env:
+          GIT_TOKEN: ${{ secrets.GESIS_GITLAB_TOKEN }}
+        run: |
+          git remote set-url gesis https://bot:${GIT_TOKEN}@git.gesis.org/rse/ansible/learn/tutorial.git
+      - name: Push main
+        run: |
+          git push gesis ${GITHUB_SHA}:main
