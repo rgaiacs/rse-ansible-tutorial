@@ -1,0 +1,21 @@
+- name: Collecting information
+  hosts:
+    - web
+  tasks:
+    - name: Get stats of /usr/bin/git
+      ansible.builtin.stat:
+        path: /usr/bin/git
+      register: git_stat
+    - name: Print message
+      ansible.builtin.debug:
+        msg: '{{ git_stat }}'
+    - name: Run git config
+      ansible.builtin.command:
+        argv:
+          - git
+          - config
+          - set
+          - --global
+          - user.name
+          - ansible
+      when: git_stat.stat.exists

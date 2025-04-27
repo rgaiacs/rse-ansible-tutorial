@@ -23,7 +23,10 @@ Playbook
     :caption: playbook.yml
     :language: yaml
 
-The above `playbook`_ has a single `play`_ with two `tasks <task>`_. The first task creates a directory and the second task insert a line in a file. 
+The above `playbook`_ has a single `play`_ with two `tasks <task>`_:
+
+1.  creates a directory.
+2.  insert a line in a file. 
 
 Running
 -------
