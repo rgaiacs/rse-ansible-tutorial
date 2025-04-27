@@ -2,6 +2,8 @@
 
 cd source/examples
 
+rm *.zip
+
 for example in *
 do
     echo Archiving $example ...
