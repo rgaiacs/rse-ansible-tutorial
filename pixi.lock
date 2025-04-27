@@ -67,6 +67,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/urllib3-2.4.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/yaml-0.2.5-h7f98852_2.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/zip-3.0-hd590300_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py313h536fd9c_1.conda
   docs:
     channels:
@@ -146,6 +147,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/watchfiles-1.0.5-py313h920b4c0_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/websockets-15.0.1-py313h536fd9c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/yaml-0.2.5-h7f98852_2.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/zip-3.0-hd590300_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py313h536fd9c_1.conda
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -945,6 +947,14 @@ packages:
   license_family: MIT
   size: 89141
   timestamp: 1641346969816
+- conda: https://conda.anaconda.org/conda-forge/linux-64/zip-3.0-hd590300_3.conda
+  sha256: 36278352573704156e60a8db8e7d8c1d20bc55b7d13db779303bffb3427effcb
+  md5: 4ff9a959f824eb05cc82024369d61e2b
+  depends:
+  - libgcc-ng >=12
+  license: BSD-like
+  size: 176792
+  timestamp: 1696102326008
 - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py313h536fd9c_1.conda
   sha256: e884a1fc5e99904eb1c4895eb71ea7bebae35aa865422e2ff006e5b37c98d919
   md5: 22b773d9a4bcf7a25ad5bc8591abc80f
