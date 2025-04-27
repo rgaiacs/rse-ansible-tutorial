@@ -12,7 +12,7 @@ In :doc:`introduction`, it was mentioned that `inventory`_ can contain variables
 Inventory
 ---------
 
-..  literalinclude:: examples/hello-world/inventories/production.yml
+..  literalinclude:: examples/hello-world-with-jinja/inventories/production.yml
     :caption: inventories/production.yml
     :language: yaml
 
@@ -21,7 +21,7 @@ The above `inventory`_ defines a variable named ``hello_world_text``.
 Playbook
 --------
 
-..  literalinclude:: examples/hello-world/playbook.yaml
+..  literalinclude:: examples/hello-world-with-jinja/playbook.yaml
     :caption: playbook.yml
     :language: yaml
 
@@ -36,7 +36,7 @@ Running
 
 ..  code:: bash
 
-    cd hello-world
+    cd hello-world-with-jinja
     ansible-playbook \
     -i inventories/production.yml \
     playbook.yaml
