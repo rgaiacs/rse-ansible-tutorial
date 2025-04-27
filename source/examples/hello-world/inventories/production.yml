@@ -1,5 +1,5 @@
 web:
   hosts:
-    managed_node:
+    managed_node_01:
       ansible_user: ansible
       ansible_password: 123

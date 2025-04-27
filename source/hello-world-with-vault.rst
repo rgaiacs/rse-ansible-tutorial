@@ -24,7 +24,7 @@ Vault
 
 For our example, it returns ::
 
-    managed_node_password: 123
+    managed_node_01_password: 123
 
 Inventory
 ---------
@@ -33,7 +33,7 @@ Inventory
     :caption: inventories/production.yml
     :language: yaml
 
-The above `inventory`_ uses the variable ``managed_node_password`` defined in the `vault`_. 
+The above `inventory`_ uses the variable ``managed_node_01_password`` defined in the `vault`_. 
 
 Playbook
 --------
@@ -56,17 +56,19 @@ When using `vault`_, a few more arguments to ``ansible-playbook`` are required. 
     --extra-vars @vault/production \
     playbook.yaml
 
+..  include:: vault-password.rst
+
 returns ::
 
     PLAY [My first play] ***********************************************************
 
     TASK [Gathering Facts] *********************************************************
-    ok: [managed_node]
+    ok: [managed_node_01]
 
     TASK [Print message] ***********************************************************
-    ok: [managed_node] => {
+    ok: [managed_node_01] => {
         "msg": "Hello world"
     }
 
     PLAY RECAP *********************************************************************
-    managed_node               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+    managed_node_01               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
