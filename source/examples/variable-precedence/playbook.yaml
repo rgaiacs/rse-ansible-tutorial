@@ -1,0 +1,8 @@
+- name: My first play
+  hosts:
+    - frontend
+    - backend
+  tasks:
+   - name: Print ansible_password
+     ansible.builtin.debug:
+       msg: "{{ hello_world_text }}"

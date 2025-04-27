@@ -1,0 +1,17 @@
+all:
+  vars:
+    ansible_user: ansible
+
+frontend:
+  vars:
+    hello_world_text: "Hello from frontend"
+  hosts:
+    managed_node_01:
+    managed_node_02:
+      hello_world_text: "Hello from node 02"
+
+backend:
+  vars:
+    hello_world_text: "Hello from backend"
+  hosts:
+    managed_node_03:

@@ -19,3 +19,4 @@ It includes features for software provisioning, configuration management, and ap
    hello-world
    hello-world-with-jinja
    hello-world-with-vault
+   variable-precedence

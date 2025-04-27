@@ -32,6 +32,14 @@ Podman
 Docker
 ^^^^^^
 
+Start the containers with
+
 ..  code:: bash
 
     docker compose up -d
+
+and access the control node with
+
+..  code:: bash
+
+    docker compose exec -it control-node /bin/sh
