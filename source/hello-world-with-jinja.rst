@@ -1,9 +1,11 @@
-Hello World
-===========
+Hello World with Jinja
+======================
 
-..  important::
+..  include:: sandbox-callout.rst
 
-    This uses the :doc:`sandbox`.
+..  tip::
+
+    All the files from this section are in :download:`hello-world-with-jinja.zip <./examples/hello-world-with-jinja.zip>`.
 
 This small example illustrates the concepts from :doc:`introduction`. 
 

@@ -1,0 +1,7 @@
+- name: My first play
+  hosts:
+    - web
+  tasks:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world
