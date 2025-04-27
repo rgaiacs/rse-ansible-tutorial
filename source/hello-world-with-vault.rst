@@ -7,34 +7,53 @@ Hello World with Vault
 
     All the files from this section are in :download:`hello-world-with-vault.zip <./examples/hello-world-with-vault.zip>`.
 
-This small example illustrates the concepts from :doc:`introduction`. 
+`Ansible`_ includes a `vault`_ that is the recommended to use to store passwords and other secrets.
+
+Vault
+-----
+
+..  literalinclude:: examples/hello-world-with-vault/vault/production
+    :caption: vault/production
+    :language: yaml
+
+`vault`_ encrypts the content of the file. The content can be decrypt with
+
+..  code: bash
+
+    ansible-vault view vault/production
+
+For our example, it returns ::
+
+    managed_node_password: 123
 
 Inventory
 ---------
 
-..  literalinclude:: examples/hello-world/inventories/production.yml
+..  literalinclude:: examples/hello-world-with-vault/inventories/production.yml
     :caption: inventories/production.yml
     :language: yaml
 
-The above `inventory`_ has a single group called ``web`` that has a single managed node called ``managed_node`` and the connection details. 
+The above `inventory`_ uses the variable ``managed_node_password`` defined in the `vault`_. 
 
 Playbook
 --------
 
-..  literalinclude:: examples/hello-world/playbook.yaml
+..  literalinclude:: examples/hello-world-with-vault/playbook.yaml
     :caption: playbook.yml
     :language: yaml
-
-The above `playbook`_ has a single `play`_ that runs a single `task`_ on the managed nodes from group ``web``. 
 
 Running
 -------
 
+When using `vault`_, a few more arguments to ``ansible-playbook`` are required. ``--ask-vault-pass`` is used to prompt the user for the password for the `vault`_ and ``--extra-vars`` is used to add the `vault`_` to be used.
+
 ..  code:: bash
 
-    cd hello-world
+    cd hello-world-with-vault
     ansible-playbook \
+    --ask-vault-pass \
     -i inventories/production.yml \
+    --extra-vars @vault/production \
     playbook.yaml
 
 returns ::

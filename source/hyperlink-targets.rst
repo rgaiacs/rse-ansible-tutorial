@@ -13,5 +13,6 @@
 .. _SSH client: https://en.wikipedia.org/wiki/Comparison_of_SSH_clients
 .. _SSH server: https://en.wikipedia.org/wiki/Comparison_of_SSH_servers
 .. _task: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#task
+.. _vault: https://docs.ansible.com/ansible/latest/vault_guide/index.html
 .. _virtual machine: https://en.wikipedia.org/wiki/Virtual_machine
 .. _YAML: https://yaml.org/spec/1.2.2/

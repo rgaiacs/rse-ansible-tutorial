@@ -31,6 +31,10 @@ For example,
 - ``ansible_user`` configures the user name used when connecting to the managed node.
 - ``ansible_password`` configures the password used when connecting to the managed node.
 
+..  warning::
+
+    The password **must** not be stored as plain text in the `inventory`_. It is recommended to use `vault`_ to store passwords as illustrated in :doc:`hello-word-with-vault`.
+
 The `inventory`_ would be
 
 ..  code:: yaml
