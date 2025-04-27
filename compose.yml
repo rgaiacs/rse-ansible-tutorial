@@ -11,7 +11,7 @@ services:
         source: ./source/examples
         target: /home/ansible/tutorial
 
-  managed-node:
+  managed-node-01:
     build:
       context: managed-node
     ports:
@@ -19,7 +19,23 @@ services:
     networks:
       ansible:
         aliases:
-          - managed_node
+          - managed_node_01
+
+  managed-node-02:
+    extends:
+      service: managed-node-01
+    networks:
+      ansible:
+        aliases: !override
+          - managed_node_02
+
+  managed-node-03:
+    extends:
+      service: managed-node-01
+    networks:
+      ansible:
+        aliases: !override
+          - managed_node_03
 
 networks:
   ansible:
