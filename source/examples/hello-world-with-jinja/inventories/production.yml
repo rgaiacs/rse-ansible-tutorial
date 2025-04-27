@@ -3,3 +3,4 @@ web:
     managed_node:
       ansible_user: ansible
       ansible_password: 123
+      hello_world_text: Hello!

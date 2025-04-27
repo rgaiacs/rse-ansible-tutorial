@@ -7,7 +7,7 @@ Hello World with Jinja
 
     All the files from this section are in :download:`hello-world-with-jinja.zip <./examples/hello-world-with-jinja.zip>`.
 
-This small example illustrates the concepts from :doc:`introduction`. 
+In :doc:`introduction`, it was mentioned that `inventory`_ can contain variables. In this section, you will learn how to use variables from the `inventory`_ in the `playbook`_.
 
 Inventory
 ---------
@@ -16,7 +16,7 @@ Inventory
     :caption: inventories/production.yml
     :language: yaml
 
-The above `inventory`_ has a single group called ``web`` that has a single managed node called ``managed_node`` and the connection details. 
+The above `inventory`_ defines a variable named ``hello_world_text``.
 
 Playbook
 --------
@@ -25,7 +25,11 @@ Playbook
     :caption: playbook.yml
     :language: yaml
 
-The above `playbook`_ has a single `play`_ that runs a single `task`_ on the managed nodes from group ``web``. 
+The above `playbook`_ uses the variable named ``hello_world_text`` defined in the `inventory`_.
+
+..  important::
+
+    The `{{ variable_name }}` is from `Jinja`_.
 
 Running
 -------
@@ -46,7 +50,7 @@ returns ::
 
     TASK [Print message] ***********************************************************
     ok: [managed_node] => {
-        "msg": "Hello world"
+        "msg": "Hello!"
     }
 
     PLAY RECAP *********************************************************************

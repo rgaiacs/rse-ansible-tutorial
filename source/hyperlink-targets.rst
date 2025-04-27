@@ -4,6 +4,7 @@
 .. _container: https://en.wikipedia.org/wiki/Containerization_(computing)
 .. _infrastructure as code: https://en.wikipedia.org/wiki/Infrastructure_as_code
 .. _inventory: https://docs.ansible.com/ansible/latest/inventory_guide/index.html
+.. _Jinja: https://jinja.palletsprojects.com/
 .. _play: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#play
 .. _playbook: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
 .. _push model: https://en.wikipedia.org/wiki/Push_technology
