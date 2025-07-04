@@ -22,6 +22,8 @@ Vault
 
     ansible-vault view vault/production
 
+..  include:: vault-password.rst
+
 For our example, it returns ::
 
     managed_node_01_password: 123
