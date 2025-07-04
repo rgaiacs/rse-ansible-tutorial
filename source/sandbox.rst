@@ -11,13 +11,19 @@ Container
     :caption: Diagram of sandbox using container for Ansible.
 
     flowchart LR
-        c[Control Node] --> m1[Managed Node]
+        c[Control Node] --> m1[Managed Node 01]
+        c[Control Node] --> m2[Managed Node 02]
+        c[Control Node] --> m3[Managed Node 03]
+        c[Control Node] --> m4[Managed Node 04]
         s[Shell] --> c
         u[User] --> s
 
         subgraph n[Container Network]
             c
             m1
+            m2
+            m3
+            m4
         end
 
         subgraph h[Host]
@@ -31,6 +37,10 @@ Podman
 
 Docker
 ^^^^^^
+
+..  tip::
+
+    All the files from this section are in :download:`sandbox-docker.zip`.
 
 Start the containers with
 
