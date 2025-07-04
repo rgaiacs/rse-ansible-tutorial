@@ -47,7 +47,7 @@ Playbook
 Running
 -------
 
-When using `vault`_, a few more arguments to ``ansible-playbook`` are required. ``--ask-vault-pass`` is used to prompt the user for the password for the `vault`_ and ``--extra-vars`` is used to add the `vault`_` to be used.
+When using `vault`_, a few more arguments to ``ansible-playbook`` are required. ``--ask-vault-pass`` is used to prompt the user for the password for the `vault`_ and ``--extra-vars`` is used to add the `vault`_ to be used.
 
 ..  code:: bash
 
