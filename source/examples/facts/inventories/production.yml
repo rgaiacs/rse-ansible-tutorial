@@ -1,0 +1,8 @@
+all:
+  vars:
+    ansible_user: ansible
+  hosts:
+    managed_node_01:
+    managed_node_02:
+    managed_node_03:
+    managed_node_04:

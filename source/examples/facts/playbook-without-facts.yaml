@@ -1,0 +1,8 @@
+- name: Display facts
+  hosts:
+    - all
+  gather_facts: false
+  tasks:
+    - name: Display GNU/Linux distribution
+      ansible.builtin.debug:
+        msg: '{{ ansible_distribution }}'

@@ -22,3 +22,4 @@ It includes features for software provisioning, configuration management, and ap
    variable-precedence
    tasks-and-modules
    module-and-return
+   facts
