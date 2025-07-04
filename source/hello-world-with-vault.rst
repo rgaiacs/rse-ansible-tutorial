@@ -18,7 +18,7 @@ Vault
 
 `vault`_ encrypts the content of the file. The content can be decrypt with
 
-..  code: bash
+..  code:: bash
 
     ansible-vault view vault/production
 
