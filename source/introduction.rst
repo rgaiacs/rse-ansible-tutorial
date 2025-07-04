@@ -33,7 +33,7 @@ For example,
 
 ..  warning::
 
-    The password **must** not be stored as plain text in the `inventory`_. It is recommended to use `vault`_ to store passwords as illustrated in :doc:`hello-word-with-vault`.
+    The password must **not** be stored as plain text in the `inventory`_. It is recommended to use `vault`_ to store passwords as illustrated in :doc:`hello-word-with-vault`.
 
 The `inventory`_ would be
 
