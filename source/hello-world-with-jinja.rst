@@ -41,6 +41,8 @@ Running
     -i inventories/production.yml \
     playbook.yaml
 
+..  include:: vault-password.rst
+
 returns ::
 
     PLAY [My first play] ***********************************************************
