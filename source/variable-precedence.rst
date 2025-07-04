@@ -7,7 +7,7 @@ Variable precedence
 
     All the files from this section are in :download:`variable-precedence.zip <./examples/variable-precedence.zip>`.
 
-In :doc:`hello-world`, :doc:`hello-world-with-jinja` and :doc:`hello-world-with-vault`, we saw that variables can be declared in multiple places. Best practices are
+In :doc:`hello-world`, :doc:`hello-world-with-vault` and :doc:`hello-world-with-jinja`, we saw that variables can be declared in multiple places. Best practices are
 
 1.  keep passwords and secrets in `vault`_.
 2.  keep variables shared among managed nodes in the group level of the `inventory`_. A special group named ``all`` can be used for variables shared among **all** managed nodes.

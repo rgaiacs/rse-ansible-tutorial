@@ -5,9 +5,11 @@
 .. _block: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#block
 .. _container: https://en.wikipedia.org/wiki/Containerization_(computing)
 .. _default library: https://docs.ansible.com/ansible/latest/collections/index.html
+.. _fact: https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html#facts
 .. _infrastructure as code: https://en.wikipedia.org/wiki/Infrastructure_as_code
 .. _inventory: https://docs.ansible.com/ansible/latest/inventory_guide/index.html
 .. _Jinja: https://jinja.palletsprojects.com/
+.. _keyword: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html
 .. _module: https://docs.ansible.com/ansible/latest/module_plugin_guide/modules_intro.html
 .. _play: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#play
 .. _playbook: https://docs.ansible.com/ansible/latest/playbook_guide/index.html

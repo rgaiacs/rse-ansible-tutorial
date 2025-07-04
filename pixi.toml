@@ -6,8 +6,19 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-zip = { cmd = [
+zip-examples = { cmd = [
     "./zip-examples.sh",
+] }
+zip-sandbox-docker = { cmd = [
+    "zip",
+    "-r",
+    "source/sandbox-docker.zip",
+    "compose.yml",
+    "control-node",
+    "managed-node-01",
+    "managed-node-02",
+    "managed-node-03",
+    "managed-node-04",
 ] }
 
 [dependencies]
@@ -28,7 +39,7 @@ preview = { cmd = [
     "0.0.0.0",
     "./source",
     "./build"
-], depends-on = ["zip"] }
+], depends-on = ["zip-examples", "zip-sandbox-docker"] }
 
 [environments]
 docs = ["autobuild"]

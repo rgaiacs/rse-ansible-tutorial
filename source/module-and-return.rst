@@ -29,8 +29,12 @@ Running
 
     cd module-and-return
     ansible-playbook \
+    --ask-vault-pass \
     -i inventories/production.yml \
+    --extra-vars @vault/production \
     playbook.yaml
+
+..  include:: vault-password.rst
 
 returns ::
 

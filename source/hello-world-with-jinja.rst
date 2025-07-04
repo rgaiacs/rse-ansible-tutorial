@@ -29,7 +29,7 @@ The above `playbook`_ uses the variable named ``hello_world_text`` defined in th
 
 ..  important::
 
-    The `{{ variable_name }}` is from `Jinja`_.
+    The ``{{ variable_name }}`` is from `Jinja`_.
 
 Running
 -------
@@ -40,6 +40,8 @@ Running
     ansible-playbook \
     -i inventories/production.yml \
     playbook.yaml
+
+..  include:: vault-password.rst
 
 returns ::
 

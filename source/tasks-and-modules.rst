@@ -5,12 +5,12 @@ Tasks and modules
 
 ..  tip::
 
-    All the files from this section are in :download:`task-and-modules.zip <./examples/task-and-modules.zip>`.
+    All the files from this section are in :download:`tasks-and-modules.zip <./examples/tasks-and-modules.zip>`.
 
 
-In :doc:`introduction`, we mentioned that a `playbook`_ is a list of `plays <play_>`_. A `play`_ has one more more `tasks <task>`_. A task is the combination of
+In :doc:`introduction`, we mentioned that a `playbook`_ is a list of `plays <play_>`_. A `play`_ has one or more `tasks <task_>`_. A `task`_ is the combination of
 
-- metadata (for example, the name of task),
+- metadata (for example, the name of the `task`_),
 - `module`_ and its arguments, and
 - additional instructions (for example, for repeat the `module`_ with different values).
 
@@ -19,7 +19,7 @@ So far, the only `module`_ that we use was `ansible.builtin.debug`_ that is part
 Playbook
 --------
 
-..  literalinclude:: examples/task-and-modules/playbook.yaml
+..  literalinclude:: examples/tasks-and-modules/playbook.yaml
     :caption: playbook.yml
     :language: yaml
 
@@ -35,8 +35,12 @@ Running
 
     cd task-and-modules
     ansible-playbook \
+    --ask-vault-pass \
     -i inventories/production.yml \
+    --extra-vars @vault/production \
     playbook.yaml
+
+..  include:: vault-password.rst
 
 returns ::
 

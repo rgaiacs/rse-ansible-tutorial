@@ -13,7 +13,7 @@ services:
 
   managed-node-01:
     build:
-      context: managed-node
+      context: managed-node-01
     ports:
       - 22
     networks:
@@ -22,20 +22,34 @@ services:
           - managed_node_01
 
   managed-node-02:
-    extends:
-      service: managed-node-01
+    build:
+      context: managed-node-02
+    ports:
+      - 22
     networks:
       ansible:
         aliases: !override
           - managed_node_02
 
   managed-node-03:
-    extends:
-      service: managed-node-01
+    build:
+      context: managed-node-03
+    ports:
+      - 22
     networks:
       ansible:
         aliases: !override
           - managed_node_03
+
+  managed-node-04:
+    build:
+      context: managed-node-04
+    ports:
+      - 22
+    networks:
+      ansible:
+        aliases: !override
+          - managed_node_04
 
 networks:
   ansible:

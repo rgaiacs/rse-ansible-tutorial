@@ -1,0 +1,14 @@
+- name: Display facts
+  hosts:
+    - all
+  tasks:
+    - name: Display GNU/Linux distribution
+      ansible.builtin.debug:
+        msg: '{{ ansible_distribution }}'
+- name: Display more facts
+  hosts:
+    - all
+  tasks:
+    - name: Display GNU/Linux distribution version
+      ansible.builtin.debug:
+        msg: '{{ ansible_distribution_version }}'
