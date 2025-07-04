@@ -2,5 +2,5 @@ web:
   hosts:
     managed_node_01:
       ansible_user: ansible
-      ansible_password: 123
+      ansible_password: '{{ managed_node_password }}'
       hello_world_text: Hello!
