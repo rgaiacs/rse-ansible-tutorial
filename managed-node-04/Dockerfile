@@ -2,16 +2,15 @@ FROM docker.io/library/fedora:42
 
 ENV PATH="$PATH:/root/.local/bin"
 
-RUN dnf install \
+RUN dnf install -y \
     python3 \
-    openrc \
-    openssh \
+    openssh-server \
     && dnf clean all \
     && rm -rf /var/cache/dnf
 
 RUN ssh-keygen -A
 
-RUN adduser ansible -D \
+RUN adduser ansible \
     && echo ansible:123 | chpasswd
 
 EXPOSE 22
