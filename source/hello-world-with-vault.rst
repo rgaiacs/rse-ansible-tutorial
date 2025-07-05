@@ -7,16 +7,18 @@ Hello World with Vault
 
     All the files from this section are in :download:`hello-world-with-vault.zip <./examples/hello-world-with-vault.zip>`.
 
-`Ansible`_ includes a `vault`_ that is the recommended to use to store passwords and other secrets.
+`Ansible`_ includes a `vault`_ that is recommended to use to store passwords and other secrets.
 
 Vault
 -----
+
+`vault`_ encrypts the content of the file. For example,
 
 ..  literalinclude:: examples/hello-world-with-vault/vault/production
     :caption: vault/production
     :language: yaml
 
-`vault`_ encrypts the content of the file. The content can be decrypt with
+The content can be decrypt with
 
 ..  code:: bash
 
@@ -28,6 +30,18 @@ For our example, it returns ::
 
     managed_node_01_password: 123
 
+To create a new `vault`_, we use
+
+..  code:: bash
+
+    ansible-vault create path/to/new/vault/file
+
+And to edit a existing `vault`_, we use
+
+..  code:: bash
+
+    ansible-vault edit path/to/existing/vault/file
+
 Inventory
 ---------
 
@@ -37,9 +51,13 @@ Inventory
 
 The above `inventory`_ uses the variable ``managed_node_01_password`` defined in the `vault`_. 
 
+..  note::
+
+    The syntax ``{{ variable_name }}`` is from `Jinja`_ and will be detailed later in :doc:`hello-world-with-jinja`.
+
 ..  tip::
 
-    As you will learn later in :doc:`variable-precedence`, the variable ``ansible_password`` can be defined in the `vault`_ and code duplication can be avoided.
+    As you will learn later in :doc:`variable-precedence`, code duplication can be avoided with the variable ``ansible_password`` being defined in the `vault`_.
 
 Playbook
 --------
@@ -51,7 +69,11 @@ Playbook
 Running
 -------
 
-When using `vault`_, a few more arguments to ``ansible-playbook`` are required. ``--ask-vault-pass`` is used to prompt the user for the password for the `vault`_ and ``--extra-vars`` is used to add the `vault`_ to be used.
+When using `vault`_, a few more arguments to ``ansible-playbook`` are required. ``--ask-vault-pass`` is used to prompt the user for the password for the `vault`_ and ``--extra-vars`` is used to load the variables defined in the `vault`_.
+
+..  important::
+
+    The location of the `vault`_ **must** be prepended with ``@`` to inform Ansible that the argument is a file.
 
 ..  code:: bash
 
