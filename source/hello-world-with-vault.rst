@@ -78,3 +78,21 @@ returns ::
 
     PLAY RECAP *********************************************************************
     managed_node_01               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Continuous Delivery
+--------------------
+
+In the previous example, we used ``--ask-vault-pass`` to manually provide the password for the `vault`_. In the context of continuous delivery , we need another way to provide the password. Most continuous delivery solutions provides a way to store and access secrets. The simplest solution is to store the password for the `vault`_ as a secret in the continuous delivery platform and, during execution, **temporarily** write the `vault`_ password to a file that will be shared with Ansible using ``--vault-password-file``. For example,
+
+..  code:: bash
+
+    cd hello-world-with-vault
+    echo 123 > vault-password.txt
+    ansible-playbook \
+    --ask-vault-pass \
+    -i inventories/production.yml \
+    --extra-vars @vault/production \
+    --vault-password-file vault-password.txt \
+    playbook.yaml
+
+uses the content of the file ``vault-password.txt``.
