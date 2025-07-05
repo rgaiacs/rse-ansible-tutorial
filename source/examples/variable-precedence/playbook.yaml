@@ -3,6 +3,6 @@
     - frontend
     - backend
   tasks:
-   - name: Print ansible_password
+   - name: Print variable hello_world_text
      ansible.builtin.debug:
        msg: "{{ hello_world_text }}"
