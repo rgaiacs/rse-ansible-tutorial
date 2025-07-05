@@ -7,7 +7,11 @@ Hello World with Jinja
 
     All the files from this section are in :download:`hello-world-with-jinja.zip <./examples/hello-world-with-jinja.zip>`.
 
-In :doc:`introduction`, it was mentioned that `inventory`_ can contain variables. In this section, you will learn how to use variables from the `inventory`_ in the `playbook`_.
+In :doc:`introduction`, it was mentioned that `inventory`_ can contain variables. In this section, you will learn how to use variables from the `inventory`_, `vault`_, or command line in the `playbook`_.
+
+..  note::
+
+    Variables are passed to Ansible from the command line using ``--extra-vars``.
 
 Inventory
 ---------
@@ -16,7 +20,7 @@ Inventory
     :caption: inventories/production.yml
     :language: yaml
 
-The above `inventory`_ defines a variable named ``hello_world_text``.
+The above `inventory`_ defines a variable named ``hello_world_text`` and uses a variable ``managed_node_password`` defined in the `vault`_.
 
 Playbook
 --------
