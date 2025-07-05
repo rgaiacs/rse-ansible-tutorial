@@ -1,0 +1,7 @@
+- name: My first play
+  hosts:
+    - web
+  tasks:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: '{{ hello_world_text | upper | truncate(6)  }}'

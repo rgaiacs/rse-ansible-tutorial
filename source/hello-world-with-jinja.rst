@@ -41,8 +41,9 @@ Running
 ..  code:: bash
 
     cd hello-world-with-jinja
-    ansible-playbook \
+    --ask-vault-pass \
     -i inventories/production.yml \
+    --extra-vars @vault/production \
     playbook.yaml
 
 ..  include:: vault-password.rst
@@ -56,8 +57,49 @@ returns ::
 
     TASK [Print message] ***********************************************************
     ok: [managed_node_01] => {
-        "msg": "Hello!"
+        "msg": "Hello world!"
     }
 
     PLAY RECAP *********************************************************************
     managed_node_01               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+Filters
+-------
+
+Jinja allow the use of filters to modify the value of variables. You can use `Jinja's builtin filters <https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters>`_, `Ansible's builtin filters <https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html>`_, or `your own custom filter <https://docs.ansible.com/ansible/latest/dev_guide/developing_plugins.html#developing-filter-plugins>`_. Filters are separated from the variable by a pipe symbol (``|``) and may have optional arguments in parentheses. Multiple filters can be chained.
+
+Playbook
+^^^^^^^^
+
+..  literalinclude:: examples/hello-world-with-jinja/playbook-with-filter.yaml
+    :caption: playbook.yml
+    :language: yaml
+
+Running
+^^^^^^^
+
+..  code:: bash
+
+    cd hello-world-with-jinja
+    ansible-playbook \
+    --ask-vault-pass \
+    -i inventories/production.yml \
+    --extra-vars @vault/production \
+    playbook-with-filter.yaml
+
+..  include:: vault-password.rst
+
+returns ::
+
+    PLAY [My first play] ***********************************************************
+
+    TASK [Gathering Facts] *********************************************************
+    ok: [managed_node_01]
+
+    TASK [Print message] ***********************************************************
+    ok: [managed_node_01] => {
+        "msg": "HEL..."
+    }
+
+    PLAY RECAP *********************************************************************
+    managed_node_01            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
