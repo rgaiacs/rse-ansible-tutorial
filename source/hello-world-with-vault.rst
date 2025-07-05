@@ -37,6 +37,10 @@ Inventory
 
 The above `inventory`_ uses the variable ``managed_node_01_password`` defined in the `vault`_. 
 
+..  tip::
+
+    As you will learn later in :doc:`variable-precedence`, the variable ``ansible_password`` can be defined in the `vault`_ and code duplication can be avoided.
+
 Playbook
 --------
 
