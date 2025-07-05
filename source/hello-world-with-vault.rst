@@ -28,7 +28,7 @@ The content can be decrypt with
 
 For our example, it returns ::
 
-    managed_node_01_password: 123
+    managed_node_password: 123
 
 To create a new `vault`_, we use
 
