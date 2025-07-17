@@ -17,6 +17,7 @@ It includes features for software provisioning, configuration management, and ap
    sandbox
    introduction
    hello-world
+   ad-hoc
    hello-world-with-vault
    hello-world-with-jinja
    variable-precedence
