@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rse-ansible-tutorial
+spec:
+  containers:
+    - name: control-node
+      image: control-node
+    - name: managed-node-01
+      image: managed-node-01
+    - name: managed-node-02
+      image: managed-node-02
+    - name: managed-node-03
+      image: managed-node-03
+    - name: managed-node-04
+      image: managed-node-04

@@ -9,16 +9,8 @@ version = "0.1.0"
 zip-examples = { cmd = [
     "./zip-examples.sh",
 ] }
-zip-sandbox-docker = { cmd = [
-    "zip",
-    "-r",
-    "source/sandbox-docker.zip",
-    "compose.yml",
-    "control-node",
-    "managed-node-01",
-    "managed-node-02",
-    "managed-node-03",
-    "managed-node-04",
+zip-sandbox = { cmd = [
+    "./zip-sandbox.sh",
 ] }
 
 [dependencies]
@@ -39,7 +31,7 @@ preview = { cmd = [
     "0.0.0.0",
     "./source",
     "./build"
-], depends-on = ["zip-examples", "zip-sandbox-docker"] }
+], depends-on = ["zip-examples", "zip-sandbox"] }
 
 [environments]
 docs = ["autobuild"]
