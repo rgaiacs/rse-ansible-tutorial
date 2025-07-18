@@ -11,7 +11,8 @@ RUN apt update \
 
 RUN ssh-keygen -A
 
-RUN adduser ansible \
+RUN adduser -D ansible \
+    && echo 'ansible ALL=(ALL) ALL' > /etc/sudoers.d/ansible \
     && echo ansible:123 | chpasswd
 
 EXPOSE 22
