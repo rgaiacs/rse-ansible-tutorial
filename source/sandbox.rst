@@ -35,6 +35,22 @@ Container
 Podman
 ^^^^^^
 
+..  tip::
+
+    All the files from this section are in :download:`sandbox-podman.zip`.
+
+Start the containers with
+
+..  code:: bash
+
+    podman kube play --recreate play.yml
+
+and access the control node with
+
+..  code:: bash
+
+    podman container exec -it rse-ansible-tutorial-docker-control-node /bin/sh
+
 Docker
 ^^^^^^
 
