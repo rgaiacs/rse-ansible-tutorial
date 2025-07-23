@@ -1,0 +1,43 @@
+- name: Configure K3s
+  hosts:
+    - k3s
+  tasks:
+    - name: Get Cluster information
+      kubernetes.core.k8s_cluster_info:
+      register: api_status
+    - name: Print Cluster information
+      ansible.builtin.debug:
+        msg: '{{ api_status.version }}'
+    - name: Create a k8s namespace
+      kubernetes.core.k8s:
+        name: tutorial
+        api_version: v1
+        kind: Namespace
+        state: present
+    - name: Create a Deployment object
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          # From https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            namespace: tutorial
+            name: nginx-deployment
+            labels:
+              app: nginx
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: nginx
+            template:
+              metadata:
+                labels:
+                  app: nginx
+              spec:
+                containers:
+                  - name: nginx
+                    image: nginx:1.14.2
+                    ports:
+                      - containerPort: 80

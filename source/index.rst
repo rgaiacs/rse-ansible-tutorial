@@ -24,4 +24,5 @@ It includes features for software provisioning, configuration management, and ap
    tasks-and-modules
    module-and-return
    facts
-   k3s
+   k3s-installation
+   k3s-deploy-service

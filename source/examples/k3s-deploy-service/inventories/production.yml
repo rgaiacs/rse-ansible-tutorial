@@ -1,0 +1,5 @@
+k3s:
+  hosts:
+    localhost:
+      ansible_connection: local
+        

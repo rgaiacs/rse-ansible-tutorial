@@ -59,6 +59,8 @@ services:
       - 6443
     networks:
       ansible:
+        aliases:
+          - kubernetes
 
 networks:
   ansible:

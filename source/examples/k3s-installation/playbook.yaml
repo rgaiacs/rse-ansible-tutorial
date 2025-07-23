@@ -1,8 +1,8 @@
-- name: Configure K3S
+- name: Configure K3s
   hosts:
     - k3s
   tasks:
-    - name: Install K3S
+    - name: Install K3s
       become: true
       ansible.builtin.command:
         argv:
