@@ -51,5 +51,14 @@ services:
         aliases: !override
           - managed_node_04
 
+  k3s:
+    image: rancher/k3s:v1.30.14-rc1-k3s2
+    privileged: true
+    command: server
+    ports:
+      - 6443
+    networks:
+      ansible:
+
 networks:
   ansible:
