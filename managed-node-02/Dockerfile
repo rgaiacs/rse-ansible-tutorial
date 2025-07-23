@@ -13,8 +13,8 @@ RUN ssh-keygen -A
 
 RUN mkdir /run/sshd
 
-RUN adduser -D ansible \
-    && echo 'ansible ALL=(ALL) ALL' > /etc/sudoers.d/ansible \
+RUN adduser --disabled-password --comment '' ansible \
+    && usermod -aG sudo ansible \
     && echo ansible:123 | chpasswd
 
 EXPOSE 22

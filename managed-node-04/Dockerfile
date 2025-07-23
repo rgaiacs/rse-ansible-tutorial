@@ -10,8 +10,7 @@ RUN dnf install -y \
 
 RUN ssh-keygen -A
 
-RUN adduser -D ansible \
-    && echo 'ansible ALL=(ALL) ALL' > /etc/sudoers.d/ansible \
+RUN adduser -G wheel ansible \
     && echo ansible:123 | chpasswd
 
 EXPOSE 22
