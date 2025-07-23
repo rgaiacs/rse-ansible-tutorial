@@ -1,0 +1,15 @@
+- name: Deploy Kubernetes Dashboard
+  # https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+  hosts:
+    - k3s
+  tasks:
+    - name: Add a repository
+      kubernetes.core.helm_repository:
+        name: kubernetes-dashboard
+        repo_url: https://kubernetes.github.io/dashboard/
+    - name: Deploy Kubernetes Dashboard
+      kubernetes.core.helm:
+        name: kubernetes-dashboard
+        chart_ref: kubernetes-dashboard/kubernetes-dashboard
+        namespace: kubernetes-dashboard
+        create_namespace: true

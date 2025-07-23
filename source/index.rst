@@ -26,3 +26,4 @@ It includes features for software provisioning, configuration management, and ap
    facts
    k3s-installation
    k3s-deploy-service
+   k3s-and-helm
