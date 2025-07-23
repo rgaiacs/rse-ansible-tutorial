@@ -1,0 +1,12 @@
+- name: Configure K3S
+  hosts:
+    - k3s
+  tasks:
+    - name: Install K3S
+      become: true
+      ansible.builtin.command:
+        argv:
+          - apk
+          - add
+          - --no-cache
+          - k3s
