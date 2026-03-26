@@ -35,7 +35,7 @@ jobs:
         run: podman login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ${{ env.REGISTRY }}
 
       - name: Build the container image
-        run: podman build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ GITHUB_REPOSITORY }}/${{ matrix.image }}:${{ GITHUB_REF_NAME }}
+        run: podman build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.image }}:${{ github.ref_name }}
 
       - name: Push new container image
-        run: podman push ${{ env.REGISTRY }}/${{ GITHUB_REPOSITORY }}/${{ matrix.image }}:${{ GITHUB_REF_NAME }}
+        run: podman push ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.image }}:${{ github.ref_name }}
