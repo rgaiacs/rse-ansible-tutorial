@@ -42,7 +42,8 @@ jobs:
         working-directory: ./${{ matrix.image }}
         run: |
           podman build \
-          --tag ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.image }}:${{ github.ref_name }}
+          --file Dockerfile \
+          --tag ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.image }}:${{ github.ref_name }} \
           .
 
       - name: Push new container image
