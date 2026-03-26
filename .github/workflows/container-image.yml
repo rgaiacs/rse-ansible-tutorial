@@ -1,0 +1,41 @@
+name: Create and publish container images
+
+on:
+  push:
+    tags:
+      - *
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
+    strategy:
+      matrix:
+        image:
+          - managed-node-01
+          - managed-node-02
+          - managed-node-03
+          - managed-node-04
+          - control-node
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Log in to the container registry
+        run: podman login --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} ${{ env.REGISTRY }}
+
+      - name: Build the container image
+        run: podman build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ GITHUB_REPOSITORY }}/${{ matrix.image }}:${{ GITHUB_REF_NAME }}
+
+      - name: Push new container image
+        run: podman push ${{ env.REGISTRY }}/${{ GITHUB_REPOSITORY }}/${{ matrix.image }}:${{ GITHUB_REF_NAME }}
