@@ -5,12 +5,14 @@ metadata:
 spec:
   containers:
     - name: control-node
-      image: control-node
+      image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-01:1.0.0
     - name: managed-node-01
-      image: managed-node-01
+      image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-01:1.0.0
     - name: managed-node-02
-      image: managed-node-02
+      image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-02:1.0.0
     - name: managed-node-03
-      image: managed-node-03
+      image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-03:1.0.0
     - name: managed-node-04
-      image: managed-node-04
+      image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-04:1.0.0
+    - name: k3s
+      image: rancher/k3s:v1.30.14-rc1-k3s2

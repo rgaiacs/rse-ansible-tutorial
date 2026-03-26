@@ -1,5 +1,6 @@
 services:
   control-node:
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/control-node:1.0.0
     build:
       context: control-node
     networks:
@@ -12,6 +13,7 @@ services:
         target: /home/ansible/tutorial
 
   managed-node-01:
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-01:1.0.0
     build:
       context: managed-node-01
     ports:
@@ -22,33 +24,36 @@ services:
           - managed_node_01
 
   managed-node-02:
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-02:1.0.0
     build:
       context: managed-node-02
     ports:
       - 22
     networks:
       ansible:
-        aliases: !override
+        aliases:
           - managed_node_02
 
   managed-node-03:
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-03:1.0.0
     build:
       context: managed-node-03
     ports:
       - 22
     networks:
       ansible:
-        aliases: !override
+        aliases:
           - managed_node_03
 
   managed-node-04:
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-04:1.0.0
     build:
       context: managed-node-04
     ports:
       - 22
     networks:
       ansible:
-        aliases: !override
+        aliases:
           - managed_node_04
 
   k3s:
