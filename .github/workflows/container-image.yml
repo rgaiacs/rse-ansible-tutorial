@@ -3,7 +3,7 @@ name: Create and publish container images
 on:
   push:
     tags:
-      - *
+      - "*"
 
 env:
   REGISTRY: ghcr.io
