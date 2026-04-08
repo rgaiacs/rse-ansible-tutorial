@@ -27,6 +27,7 @@ jobs:
           - managed-node-03
           - managed-node-04
           - control-node
+          - control-node-with-k8s
 
     steps:
       - uses: actions/checkout@v5

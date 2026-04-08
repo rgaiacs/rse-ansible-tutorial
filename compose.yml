@@ -1,8 +1,8 @@
 services:
   control-node:
-    image: ghcr.io/rgaiacs/rse-ansible-tutorial/control-node:1.0.0
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/control-node-with-k8s:1.1.0
     build:
-      context: control-node
+      context: control-node-with-k8s
     networks:
       ansible:
         aliases:
@@ -13,7 +13,7 @@ services:
         target: /home/ansible/tutorial
 
   managed-node-01:
-    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-01:1.0.0
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-01:1.1.0
     build:
       context: managed-node-01
     ports:
@@ -24,7 +24,7 @@ services:
           - managed_node_01
 
   managed-node-02:
-    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-02:1.0.0
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-02:1.1.0
     build:
       context: managed-node-02
     ports:
@@ -35,7 +35,7 @@ services:
           - managed_node_02
 
   managed-node-03:
-    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-03:1.0.0
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-03:1.1.0
     build:
       context: managed-node-03
     ports:
@@ -46,7 +46,7 @@ services:
           - managed_node_03
 
   managed-node-04:
-    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-04:1.0.0
+    image: ghcr.io/rgaiacs/rse-ansible-tutorial/managed-node-04:1.1.0
     build:
       context: managed-node-04
     ports:
