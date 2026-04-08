@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.21.3
+FROM docker.io/library/alpine:3.23.3
 
 ENV PATH="$PATH:/root/.local/bin"
 

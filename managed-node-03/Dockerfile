@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:25.04
+FROM docker.io/library/ubuntu:26.04
 
 ENV PATH="$PATH:/root/.local/bin"
 

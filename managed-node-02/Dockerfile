@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:12.10-slim
+FROM docker.io/library/debian:12.13-slim
 
 ENV PATH="$PATH:/root/.local/bin"
 
