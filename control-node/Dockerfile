@@ -12,12 +12,12 @@ RUN apk add --no-cache \
 RUN pipx install --include-deps ansible==13.5.0 && \
     pipx inject --include-apps ansible ansible-lint==26.4.0
 
+USER ansible
+    
 RUN mkdir -p /home/ansible/.ssh && \
     echo 'Host *' >> /home/ansible/.ssh/config && \
     echo '    StrictHostKeyChecking no' >> /home/ansible/.ssh/config && \
     chmod 400 /home/ansible/.ssh/config
-
-USER ansible
 
 ENV PATH="$PATH:/home/ansible/.local/bin"
 
