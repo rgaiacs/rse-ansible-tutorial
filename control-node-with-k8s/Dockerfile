@@ -2,12 +2,6 @@ FROM docker.io/library/alpine:3.23.3
 
 RUN adduser ansible -D
 
-USER ansible
-
-ENV PATH="$PATH:/home/ansible/.local/bin"
-
-WORKDIR /home/ansible
-
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 RUN apk add --no-cache \
@@ -25,3 +19,9 @@ RUN mkdir -p /home/ansible/.ssh && \
     echo '    StrictHostKeyChecking no' >> /home/ansible/.ssh/config && \
     chmod 400 /home/ansible/.ssh/config && \
     mkdir -p /home/ansible/.kube
+
+USER ansible
+
+ENV PATH="$PATH:/home/ansible/.local/bin"
+
+WORKDIR /home/ansible
